@@ -14,7 +14,7 @@ const quizSchema = new Schema({
    writeConcern: {
       w: 'majority',
       j: true,
-      wtimeout: 1000
+      wtimeout: 5000
     }
 });
 
