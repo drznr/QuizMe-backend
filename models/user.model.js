@@ -7,6 +7,13 @@ const userSchema = new Schema({
    email: String,
    avatar: String,
    at: Number
+},
+{
+   writeConcern: {
+      w: 'majority',
+      j: true,
+      wtimeout: 1000
+    }
 });
 
 const User = mongoose.model('User', userSchema);

@@ -9,6 +9,13 @@ const quizSchema = new Schema({
     bestTime: Number,
     by: Object,
     questions: [ Object ]
+},
+{
+   writeConcern: {
+      w: 'majority',
+      j: true,
+      wtimeout: 1000
+    }
 });
 
 const Quiz = mongoose.model('Quiz', quizSchema); 
